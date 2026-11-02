@@ -4,8 +4,18 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Advercase';
+      src: url('fonts/advercase-regular.woff2') format('woff2');
+      font-weight: 400 500; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Advercase';
+      src: url('fonts/advercase-bold.woff2') format('woff2');
+      font-weight: 600 800; font-style: normal;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       width: 1200px;
@@ -32,14 +42,14 @@
       mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 100%);
     }
 
-    /* Red glow */
+    /* Accent glow */
     .glow {
       position: absolute;
       top: -40%;
       right: -10%;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(230,47,55,0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(47,117,230,0.35) 0%, transparent 70%);
       opacity: 0.4;
       pointer-events: none;
     }
@@ -51,12 +61,12 @@
     }
 
     .name {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-family: 'Advercase', 'Space Grotesk', system-ui, sans-serif;
       font-size: 70px;
       font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 16px;
-      background: linear-gradient(90deg, #E62F37, #ff6b35, #E62F37);
+      background: linear-gradient(90deg, #2F75E6, #35D3FF, #2F75E6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -65,14 +75,14 @@
     .eyebrow {
       font-family: 'JetBrains Mono', monospace;
       font-size: 13px;
-      color: #ff5c5c;
+      color: #5CA8FF;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-family: 'Advercase', 'Space Grotesk', system-ui, sans-serif;
       font-size: 52px;
       font-weight: 800;
       line-height: 1.05;
@@ -81,8 +91,10 @@
     }
 
     .gradient-text {
+      background: linear-gradient(135deg, #2F75E6, #35D3FF);
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 2px #E62F37;
+      background-clip: text;
     }
 
     .subtitle {
@@ -110,8 +122,8 @@
     <div class="name">Tyler Richards</div>
     <div class="eyebrow">Operator &rarr; Investor &rarr; Educator</div>
     <h1>I help founders build<br>companies that<br><span class="gradient-text">actually work.</span></h1>
-    <p class="subtitle">3x exited founder. GP at Startup Ignition Ventures. BYU professor. I don't just invest in startups, I get in the trenches with the founders who build them.</p>
+    <p class="subtitle">3x exited founder. GP at Startup Ignition Ventures. BYU &amp; UVU professor. I don't just invest in startups, I get in the trenches with the founders who build them.</p>
   </div>
-  <div class="url">trich.me</div>
+  <div class="url">tylerjordanrichards.com</div>
 </body>
 </html>
