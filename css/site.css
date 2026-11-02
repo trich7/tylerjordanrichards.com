@@ -190,6 +190,7 @@ img {
   pointer-events: none;
 }
 
+/* Hero photo: blurred, dimmed backdrop layer */
 .hero::before {
   content: '';
   position: absolute;
@@ -198,10 +199,30 @@ img {
   bottom: 0;
   width: 50%;
   background: url('../img/tyler-headshot.jpg') center center / cover no-repeat;
-  opacity: 0.45;
+  opacity: 0.26;
+  filter: blur(9px) saturate(0.8);
+  /* scale up so the blur does not feather the layer's own edges */
+  transform: scale(1.08);
+  transform-origin: center right;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
   mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
+}
+
+/* Hero subject: Tyler cut out, sits above the blur so his face stays lit.
+   Same box and sizing as .hero::before so the two line up exactly. */
+.hero-subject {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background: url('../img/tyler-cutout.webp') center center / cover no-repeat;
+  opacity: 0.92;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.75) 22%, rgba(0,0,0,1) 45%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.75) 22%, rgba(0,0,0,1) 45%);
 }
 
 .hero::after {
@@ -218,6 +239,8 @@ img {
   max-width: var(--container-width);
   margin: 0 auto;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-eyebrow {
@@ -1471,10 +1494,26 @@ img {
     top: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.35;
+    opacity: 0.22;
+    filter: blur(7px) saturate(0.8);
+    transform: none;
     background: url('../img/tyler-headshot.jpg') center top / contain no-repeat;
     -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
     mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
+  }
+
+  /* subject layer mirrors the backdrop's mobile geometry exactly */
+  .hero-subject {
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.92;
+    background: url('../img/tyler-cutout.webp') center top / contain no-repeat;
+    /* fade out well above the eyebrow/headline so copy keeps its contrast */
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 42%, rgba(0,0,0,0.5) 62%, rgba(0,0,0,1) 88%);
+    mask-image: linear-gradient(to top, transparent 0%, transparent 42%, rgba(0,0,0,0.5) 62%, rgba(0,0,0,1) 88%);
   }
 
   .hero::after {
