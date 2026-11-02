@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { margin: 0; padding: 0; width: 2560px; height: 1440px; overflow: hidden; }
+
+    .banner {
+      width: 2560px;
+      height: 1440px;
+      background: #0a0a0a;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 60%;
+      background: url('img/tyler-headshot.jpg') center center / cover no-repeat;
+      opacity: 0.35;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
+    }
+
+    .banner::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: 10%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(230, 47, 55, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .dot-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .banner-content {
+      position: absolute;
+      top: 508px;
+      left: 507px;
+      width: 1546px;
+      height: 423px;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+      z-index: 5;
+    }
+
+    .banner-text { max-width: 900px; }
+
+    .banner-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      color: #ff5c5c;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .banner-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 96px;
+      font-weight: 800;
+      letter-spacing: -3px;
+      line-height: 1;
+      margin-bottom: 20px;
+      color: #f5f5f5;
+    }
+
+    .banner-name .gradient-text {
+      background: linear-gradient(135deg, #E62F37, #ff6b35);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .banner-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      color: #a0a0a0;
+      line-height: 1.5;
+      max-width: 700px;
+    }
+
+    .banner-tagline strong { color: #f5f5f5; }
+
+    .banner-bottom-right {
+      position: absolute;
+      bottom: 540px;
+      right: 560px;
+      z-index: 5;
+      text-align: right;
+    }
+
+    .banner-follow-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      color: #666;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .banner-follow-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: flex-end;
+    }
+
+    .banner-si-logo { height: 32px; width: auto; opacity: 0.8; }
+
+    .banner-handle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      color: #a0a0a0;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="dot-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-text">
+        <div class="banner-eyebrow">Operator &rarr; Investor &rarr; Educator</div>
+        <div class="banner-name">Tyler <span class="gradient-text">Richards</span></div>
+        <div class="banner-tagline">3x exited founder. GP at <strong>Startup Ignition Ventures</strong>. BYU professor. I help founders build companies that actually work.</div>
+      </div>
+    </div>
+    <div class="banner-bottom-right">
+      <span class="banner-follow-text">More content on</span>
+      <div class="banner-follow-brand">
+        <img src="img/logo-startupignition.svg" alt="Startup Ignition" class="banner-si-logo">
+        <span class="banner-handle">@StartupIgnition</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
