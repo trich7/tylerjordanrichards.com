@@ -200,9 +200,9 @@ img {
   width: 50%;
   background: url('../img/tyler-headshot.jpg') center center / cover no-repeat;
   opacity: 0.26;
-  filter: blur(9px) saturate(0.8);
+  filter: blur(38px) saturate(0.75);
   /* scale up so the blur does not feather the layer's own edges */
-  transform: scale(1.08);
+  transform: scale(1.18);
   transform-origin: center right;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
