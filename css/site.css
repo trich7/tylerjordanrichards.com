@@ -204,6 +204,21 @@ img {
   mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
 }
 
+/* Tyler, cut out with Vision person segmentation, at full opacity */
+.hero-subject {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background: url('../img/tyler-cutout.webp') center center / cover no-repeat;
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.75) 22%, rgba(0,0,0,1) 45%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.75) 22%, rgba(0,0,0,1) 45%);
+}
+
 .hero::after {
   content: '';
   position: absolute;
@@ -218,6 +233,8 @@ img {
   max-width: var(--container-width);
   margin: 0 auto;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-eyebrow {
@@ -1475,6 +1492,18 @@ img {
     background: url('../img/tyler-headshot.jpg') center top / contain no-repeat;
     -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
     mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%);
+  }
+
+  .hero-subject {
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    background: url('../img/tyler-cutout.webp') center top / contain no-repeat;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 42%, rgba(0,0,0,0.5) 62%, rgba(0,0,0,1) 88%);
+    mask-image: linear-gradient(to top, transparent 0%, transparent 42%, rgba(0,0,0,0.5) 62%, rgba(0,0,0,1) 88%);
   }
 
   .hero::after {
